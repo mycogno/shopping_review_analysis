@@ -39,14 +39,6 @@ const callbacks = {
 function App() {
   return (
     <div>
-      <p>
-        This example shows how we can use the callbacks prop to customize word
-        colors and tooltips based on the data of the word.
-      </p>
-      <p>
-        We can also capture the event target element and create an external link
-        based on the word text!
-      </p>
       <div style={{ height: 400, width: 600 }}>
         <ReactWordcloud callbacks={callbacks} words={words} />
       </div>
