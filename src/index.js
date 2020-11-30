@@ -17,20 +17,17 @@ function getCallback(callback) {
     text
       .on("click", () => {
         if (isActive) {
-          window.open(`https://duckduckgo.com/?q=${word.text}`, "_blank");
+          window.open(`https://www.google.com/search?q=${word.text}`, "_blank");
         }
       })
       .transition()
-      .attr("background", "white")
-      .attr("font-size", isActive ? "300%" : "100%")
       .attr("text-decoration", isActive ? "underline" : "none");
   };
 }
 
 const callbacks = {
   getWordColor: (word) => (word.value > 50 ? "orange" : "purple"),
-  getWordTooltip: (word) =>
-    `The word "${word.text}" appears ${word.value} times.`,
+  getWordTooltip: (word) => `단어 ${word.text}의 가중치는 ${word.value} 입니다`,
   onWordClick: getCallback("onWordClick"),
   onWordMouseOut: getCallback("onWordMouseOut"),
   onWordMouseOver: getCallback("onWordMouseOver"),
@@ -39,8 +36,19 @@ const callbacks = {
 function App() {
   return (
     <div>
-      <div style={{ height: 400, width: 600 }}>
-        <ReactWordcloud callbacks={callbacks} words={words} />
+      <div>
+        <ReactWordcloud
+          callbacks={callbacks}
+          words={words}
+          size={[1000, 1000]}
+          options={{
+            rotations: 9,
+            rotationAngles: [-25, -15, -10, -5, 0, 5, 10, 15, 25],
+            fontSizes: [18, 55],
+            fontWeight: "bold",
+            padding: 5,
+          }}
+        />
       </div>
     </div>
   );
