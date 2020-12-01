@@ -27,7 +27,8 @@ function getCallback(callback) {
 
 const callbacks = {
   getWordColor: (word) => (word.value > 50 ? "orange" : "purple"),
-  getWordTooltip: (word) => `단어 ${word.text}의 가중치는 ${word.value} 입니다`,
+  getWordTooltip: (word) =>
+    `단어 "${word.text}"의 가중치는 ${word.value} 입니다`,
   onWordClick: getCallback("onWordClick"),
   onWordMouseOut: getCallback("onWordMouseOut"),
   onWordMouseOver: getCallback("onWordMouseOver"),
@@ -42,8 +43,8 @@ function App() {
           words={words}
           size={[1000, 1000]}
           options={{
-            rotations: 9,
-            rotationAngles: [-25, -15, -10, -5, 0, 5, 10, 15, 25],
+            rotations: 1,
+            rotationAngles: [0],
             fontSizes: [18, 55],
             fontWeight: "bold",
             padding: 5,
