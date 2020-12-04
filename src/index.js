@@ -7,7 +7,8 @@ import ReactWordcloud from "react-wordcloud";
 import "tippy.js/dist/tippy.css";
 import "tippy.js/animations/scale.css";
 
-import words from "./words";
+import poswords from "./poswords";
+import negwords from "./negwords";
 
 function getCallback(callback) {
   return function (word, event) {
@@ -26,7 +27,7 @@ function getCallback(callback) {
 }
 
 const callbacks = {
-  getWordColor: (word) => (word.value > 50 ? "orange" : "purple"),
+  getWordColor: (word) => (word.sentiment === 1 ? "orange" : "purple"),
   getWordTooltip: (word) =>
     `단어 "${word.text}"의 가중치는 ${word.value} 입니다`,
   onWordClick: getCallback("onWordClick"),
@@ -40,7 +41,21 @@ function App() {
       <div>
         <ReactWordcloud
           callbacks={callbacks}
-          words={words}
+          words={poswords}
+          size={[1000, 1000]}
+          options={{
+            rotations: 1,
+            rotationAngles: [0],
+            fontSizes: [18, 55],
+            fontWeight: "bold",
+            padding: 5,
+          }}
+        />
+      </div>
+      <div>
+        <ReactWordcloud
+          callbacks={callbacks}
+          words={negwords}
           size={[1000, 1000]}
           options={{
             rotations: 1,

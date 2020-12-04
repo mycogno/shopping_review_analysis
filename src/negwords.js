@@ -1,0 +1,16 @@
+export default [
+  { text: "핏물", value: 21.972, sentiment: -1 },
+  { text: "생각", value: 21.972, sentiment: -1 },
+  { text: "많이", value: 21.972, sentiment: -1 },
+  { text: "ㅠㅠ", value: 21.972, sentiment: -1 },
+  { text: "있다", value: 21.972, sentiment: -1 },
+  { text: "해동", value: 21.972, sentiment: -1 },
+  { text: "포장", value: 21.972, sentiment: -1 },
+  { text: "퍽퍽", value: 21.972, sentiment: -1 },
+  { text: "맛있다", value: 13.863, sentiment: -1 },
+  { text: "개별", value: 13.863, sentiment: -1 },
+  { text: "괜찮다", value: 13.863, sentiment: -1 },
+  { text: "조금", value: 13.863, sentiment: -1 },
+  { text: "ㅜㅜ", value: 13.863, sentiment: -1 },
+  { text: "소고기", value: 13.863, sentiment: -1 },
+];
