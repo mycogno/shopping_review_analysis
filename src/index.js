@@ -7,6 +7,7 @@ import ReactWordcloud from "react-wordcloud";
 import "tippy.js/dist/tippy.css";
 import "tippy.js/animations/scale.css";
 
+import words from "./words";
 import poswords from "./poswords";
 import negwords from "./negwords";
 
@@ -41,7 +42,7 @@ function App() {
       <div>
         <ReactWordcloud
           callbacks={callbacks}
-          words={poswords}
+          words={words}
           size={[1000, 1000]}
           options={{
             rotations: 1,
@@ -52,6 +53,20 @@ function App() {
           }}
         />
       </div>
+      {/* <div>
+        <ReactWordcloud
+          callbacks={callbacks}
+          words={poswords}
+          size={[1000, 1000]}
+          options={{
+            rotations: 1,
+            rotationAngles: [0],
+            fontSizes: [18, 55],
+            fontWeight: "bold",
+            padding: 5,
+          }}
+        />
+      </div> */}
       <div>
         <ReactWordcloud
           callbacks={callbacks}
